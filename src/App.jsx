@@ -32,7 +32,7 @@ function App() {
 
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <h1 className="text-5xl font-bold mb-4 text-white">
-            Hi Belo
+            Hi Belo, What have you had for supper?
           </h1>
           <p className="text-xl mb-10 text-white">
             India's Largest Trekking Organization
