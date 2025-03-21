@@ -10,8 +10,9 @@ const Navbar = () => {
         
         {/* Mobile menu button */}
         <button 
-          className="md:hidden text-gray-700 focus:outline-none"
+          className="md:hidden text-gray-700 focus:outline-none transition-all duration-200"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
         >
           <svg 
             className="w-6 h-6" 
@@ -63,9 +64,13 @@ const Navbar = () => {
         </div>
       </div>
       
-      {/* Mobile menu */}
-      {isMenuOpen && (
-        <div className="md:hidden mt-4 pb-2 space-y-3">
+      {/* Mobile menu with transition */}
+      <div 
+        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+          isMenuOpen ? "max-h-64 opacity-100 mt-4 pb-2" : "max-h-0 opacity-0"
+        }`}
+      >
+        <div className="space-y-3 pt-1">
           <a
             href="#home"
             className="block py-2 text-gray-700 hover:text-amber-600 transition-colors"
@@ -102,7 +107,7 @@ const Navbar = () => {
             <i className="fa fa-phone mr-2"></i> Contact
           </a>
         </div>
-      )}
+      </div>
     </nav>
   );
 };
