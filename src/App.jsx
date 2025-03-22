@@ -18,43 +18,48 @@ function App() {
   );
 
   return (
-    <div className="bg-amber-100 min-h-screen w-full overflow-x-hidden">
+    <div className="bg-amber-100 min-h-screen w-screen overflow-x-hidden">
       {/* Navigation Bar */}
       <Navbar />
 
       {/* Hero Section */}
-      <section className="text-white py-16 md:py-20 px-4 md:px-6 bg-[url('https://i.pinimg.com/736x/ef/92/c9/ef92c99bce16311992b28d159c9bc3cf.jpg')] bg-cover bg-center relative min-h-[60vh] md:min-h-[80vh] flex items-center">
-        {/* Dark overlay for better text readability */}
-        <div className="absolute inset-0 bg-black opacity-40"></div>
+      <div className="flex  justify-evenly  bg-[url('https://i.pinimg.com/736x/ef/92/c9/ef92c99bce16311992b28d159c9bc3cf.jpg')] bg-cover bg-center relative min-h-[60vh] md:min-h-[80vh] w-full">
+        <section className="text-white py-16 md:py-20 px-4 md:px-6 flex items-center ">
+          {/* Dark overlay for better text readability */}
+          <div className="absolute inset-0 bg-black opacity-40"></div>
 
-        <div className="max-w-4xl mx-auto text-center relative z-10 w-full">
-          <h1 className="text-3xl md:text-5xl font-bold mb-4 text-white">
-            Experience Nature
-          </h1>
-          <p className="text-lg md:text-xl mb-8 md:mb-10 text-white">
-            India's Largest Trekking Organization
-          </p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-            <div className="flex flex-col items-center">
-              <i className="fa fa-mountain text-2xl md:text-3xl mb-2"></i>
-              <span className="text-base md:text-lg">25,000+ Trekkers</span>
-            </div>
-            <div className="flex flex-col items-center">
-              <i className="fa fa-users text-2xl md:text-3xl mb-2"></i>
-              <span className="text-base md:text-lg">7,000+ Volunteers</span>
-            </div>
-            <div className="flex flex-col items-center">
-              <i className="fa fa-map-marker text-2xl md:text-3xl mb-2"></i>
-              <span className="text-base md:text-lg">50+ Destinations</span>
-            </div>
-            <div className="flex flex-col items-center">
-              <i className="fa fa-clock text-2xl md:text-3xl mb-2"></i>
-              <span className="text-base md:text-lg">15+ Years</span>
+          <div className="max-w-4xl mx-auto text-left relative z-10 w-full flex flex-col justify-start">
+            <h1 className="text-3xl md:text-5xl font-bold mb-4 text-white">
+              Experience
+            </h1>
+            <h1 className="text-3xl md:text-5xl font-bold mb-4 text-white">
+              Nature
+            </h1>
+            <p className="text-lg md:text-xl mb-8 md:mb-10 text-white">
+              India's Largest Trekking Organization
+            </p>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+              <div className="flex flex-col items-center">
+                <i className="fa fa-mountain text-2xl md:text-3xl mb-2"></i>
+                <span className="text-base md:text-lg">25,000+ Trekkers</span>
+              </div>
+              <div className="flex flex-col items-center">
+                <i className="fa fa-users text-2xl md:text-3xl mb-2"></i>
+                <span className="text-base md:text-lg">7,000+ Volunteers</span>
+              </div>
+              <div className="flex flex-col items-center">
+                <i className="fa fa-map-marker text-2xl md:text-3xl mb-2"></i>
+                <span className="text-base md:text-lg">50+ Destinations</span>
+              </div>
+              <div className="flex flex-col items-center">
+                <i className="fa fa-clock text-2xl md:text-3xl mb-2"></i>
+                <span className="text-base md:text-lg">15+ Years</span>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-
+        </section>
+        <div></div>
+      </div>
       {/* Highlighted Events Section */}
       <section className="py-12 md:py-16 px-4 md:px-6" id="events">
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-2">
