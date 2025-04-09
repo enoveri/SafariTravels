@@ -1,6 +1,8 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Card = ({ 
+  id,
   image, 
   title, 
   icons = [], 
@@ -8,10 +10,21 @@ const Card = ({
   overlay = "",
   className = "" 
 }) => {
+  const navigate = useNavigate();
+  
+  const handleClick = () => {
+    if (id) {
+      navigate(`/events/${id}`);
+    }
+  };
+  
   // Trek card style with hover effect
   if (type === "trek") {
     return (
-      <div className={`relative overflow-hidden rounded-lg group ${className}`}>
+      <div 
+        className={`relative overflow-hidden rounded-lg group ${className} cursor-pointer`}
+        onClick={handleClick}
+      >
         <img
           src={image}
           alt={title}
@@ -27,7 +40,10 @@ const Card = ({
   // Simple card with just title at bottom
   if (type === "simple") {
     return (
-      <div className={`bg-white rounded-lg overflow-hidden ${className}`}>
+      <div 
+        className={`bg-white rounded-lg overflow-hidden ${className} cursor-pointer hover:shadow-md transition-shadow`}
+        onClick={handleClick}
+      >
         <img
           src={image}
           alt={title}
@@ -43,13 +59,16 @@ const Card = ({
   // Card with overlay text in center
   if (type === "overlay") {
     return (
-      <div className={`relative overflow-hidden rounded-lg ${className}`}>
+      <div 
+        className={`relative overflow-hidden rounded-lg ${className} cursor-pointer`}
+        onClick={handleClick}
+      >
         <img
           src={image}
           alt={title}
-          className="w-full h-48 md:h-56 object-cover"
+          className="w-full h-48 md:h-56 object-cover transition-transform duration-300 hover:scale-105"
         />
-        <div className="absolute inset-0 flex items-center justify-center bg-black/30">
+        <div className="absolute inset-0 flex items-center justify-center bg-black/30 hover:bg-black/40 transition-colors">
           <div className="text-white font-bold text-xl md:text-2xl">{overlay || title}</div>
         </div>
         {!overlay && (
@@ -63,7 +82,10 @@ const Card = ({
 
   // Default card style (for events)
   return (
-    <div className={`bg-white rounded-lg overflow-hidden shadow-lg ${className}`}>
+    <div 
+      className={`bg-white rounded-lg overflow-hidden shadow-lg ${className} cursor-pointer hover:shadow-xl transition-shadow`}
+      onClick={handleClick}
+    >
       <img
         src={image}
         alt={title}
